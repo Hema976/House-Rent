@@ -3,10 +3,10 @@ const router = express.Router();
 
 const {
   getAllProperties,
-  createProperty,
+  addProperty,
 } = require("../controllers/propertyController");
 
 router.get("/", getAllProperties);
-router.post("/", createProperty);
+router.post("/", addProperty);
 
 module.exports = router;
