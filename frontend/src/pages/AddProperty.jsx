@@ -1,4 +1,43 @@
+   import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function AddProperty() {
+  const navigate = useNavigate();
+
+  const [property, setProperty] = useState({
+    title: "",
+    location: "",
+    price: "",
+    owner: "",
+    image: "",
+    description: "",
+  });
+
+  const handleChange = (e) => {
+    setProperty({
+      ...property,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleAdd = () => {
+    const oldData =
+      JSON.parse(localStorage.getItem("properties")) || [];
+
+    const newProperty = {
+      _id: Date.now(),
+      ...property,
+    };
+
+    localStorage.setItem(
+      "properties",
+      JSON.stringify([...oldData, newProperty])
+    );
+
+    alert("Property Added Successfully");
+    navigate("/properties");
+  };
+
   return (
     <div
       style={{
@@ -15,59 +54,57 @@ function AddProperty() {
           background: "#1e293b",
           padding: "30px",
           borderRadius: "12px",
-          boxShadow: "0 0 15px rgba(0,0,0,0.4)",
         }}
       >
-        <h2
-          style={{
-            textAlign: "center",
-            color: "#7c5cff",
-            marginBottom: "25px",
-          }}
-        >
+        <h2 style={{ textAlign: "center", color: "#7c5cff" }}>
           Add New Property
         </h2>
 
         <input
-          type="text"
+          name="title"
           placeholder="Property Name"
           style={inputStyle}
+          onChange={handleChange}
         />
 
         <input
-          type="text"
+          name="location"
           placeholder="Location"
           style={inputStyle}
+          onChange={handleChange}
         />
 
         <input
-          type="number"
+          name="price"
           placeholder="Rent Amount"
           style={inputStyle}
+          onChange={handleChange}
         />
 
         <input
-          type="text"
+          name="owner"
           placeholder="Owner Contact"
           style={inputStyle}
+          onChange={handleChange}
         />
 
         <input
-          type="text"
+          name="image"
           placeholder="Image URL"
           style={inputStyle}
+          onChange={handleChange}
         />
 
         <textarea
-          placeholder="Property Description"
+          name="description"
+          placeholder="Description"
           rows="5"
-          style={{
-            ...inputStyle,
-            resize: "none",
-          }}
+          style={inputStyle}
+          onChange={handleChange}
         />
 
         <button
+          onClick={handleAdd}
           style={{
             width: "100%",
             padding: "12px",
@@ -75,9 +112,6 @@ function AddProperty() {
             color: "white",
             border: "none",
             borderRadius: "8px",
-            cursor: "pointer",
-            fontSize: "16px",
-            marginTop: "15px",
           }}
         >
           Add Property
@@ -92,9 +126,6 @@ const inputStyle = {
   padding: "12px",
   marginBottom: "15px",
   borderRadius: "8px",
-  border: "1px solid #444",
-  outline: "none",
-  fontSize: "15px",
 };
 
-export default AddProperty;
+export default AddProperty;     
