@@ -11,25 +11,25 @@ function PropertyList() {
   const fetchProperties = async () => {
     try {
       const res = await API.get("/api/properties");
-      console.log(res.data);
+      setProperties(res.data);
+    } catch (err) {
+      console.log(err);
 
-      // Temporary dummy data until backend returns actual properties
+      // Temporary data
       setProperties([
         {
           _id: 1,
           title: "2BHK House",
-          address: "Hyderabad",
-          rent: 12000,
+          location: "Hyderabad",
+          price: 12000,
         },
         {
           _id: 2,
           title: "1BHK Apartment",
-          address: "Bangalore",
-          rent: 9000,
+          location: "Bangalore",
+          price: 9000,
         },
       ]);
-    } catch (err) {
-      console.log(err);
     }
   };
 
@@ -41,15 +41,17 @@ function PropertyList() {
         <div
           key={property._id}
           style={{
-            border: "1px solid gray",
+            border: "1px solid #ccc",
             margin: "15px",
             padding: "15px",
-            borderRadius: "8px",
+            borderRadius: "10px",
           }}
         >
           <h3>{property.title}</h3>
-          <p>📍 {property.address}</p>
-          <p>💰 ₹{property.rent}</p>
+
+          <p>📍 {property.location}</p>
+
+          <p>💰 ₹{property.price}</p>
 
           <button>View Details</button>
         </div>
