@@ -39,4 +39,32 @@ function Home() {
           >
             <Link to="/owner">
               <button className="hero-btn">
-               
+                Owner Dashboard
+              </button>
+            </Link>
+
+            <Link to="/admin">
+              <button className="hero-btn">
+                Admin Dashboard
+              </button>
+            </Link>
+
+            <Link to="/renter">
+              <button className="hero-btn">
+                Renter Dashboard
+              </button>
+            </Link>
+
+            <Link to="/profile">
+              <button className="hero-btn">
+                My Profile
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default Home;
