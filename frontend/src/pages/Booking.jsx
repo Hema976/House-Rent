@@ -36,7 +36,7 @@ function Booking() {
             padding: "12px",
             marginTop: "20px",
             background: "#7c5cff",
-            color: "#fff",
+            color: "white",
             border: "none",
             borderRadius: "8px",
             cursor: "pointer",
