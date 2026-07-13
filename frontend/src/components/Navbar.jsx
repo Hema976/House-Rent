@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <nav>
-      <h2>House Rent Management System</h2>
+      <h2>House Rent</h2>
+
+      <Link to="/">Home</Link> |{" "}
+      <Link to="/login">Login</Link> |{" "}
+      <Link to="/register">Register</Link>
     </nav>
   );
 }
