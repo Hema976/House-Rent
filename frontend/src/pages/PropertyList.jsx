@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./PropertyList.css";
 
 function PropertyList() {
+  const navigate = useNavigate();
+
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
@@ -49,7 +52,11 @@ function PropertyList() {
 
               <p>💰 ₹{property.price}</p>
 
-              <button>View Details</button>
+              <button
+                onClick={() => navigate(`/property/${property._id}`)}
+              >
+                View Details
+              </button>
             </div>
           </div>
         ))}
