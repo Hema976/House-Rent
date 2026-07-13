@@ -28,37 +28,33 @@ function Home() {
             </button>
           </Link>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "18px",
-              marginTop: "25px",
-            }}
-          >
-            <Link to="/owner">
-              <button className="hero-btn">
-                Owner Dashboard
-              </button>
+          <div className="dashboard-grid">
+            <Link to="/owner" className="card-link">
+              <div className="dashboard-card">
+                <h3>🏠 Owner Dashboard</h3>
+                <p>Add & Manage Properties</p>
+              </div>
             </Link>
 
-            <Link to="/admin">
-              <button className="hero-btn">
-                Admin Dashboard
-              </button>
+            <Link to="/admin" className="card-link">
+              <div className="dashboard-card">
+                <h3>🛡️ Admin Dashboard</h3>
+                <p>Manage Properties & Bookings</p>
+              </div>
             </Link>
 
-            <Link to="/renter">
-              <button className="hero-btn">
-                Renter Dashboard
-              </button>
+            <Link to="/renter" className="card-link">
+              <div className="dashboard-card">
+                <h3>🔑 Renter Dashboard</h3>
+                <p>Browse & Book Houses</p>
+              </div>
             </Link>
 
-            <Link to="/profile">
-              <button className="hero-btn">
-                My Profile
-              </button>
+            <Link to="/profile" className="card-link">
+              <div className="dashboard-card">
+                <h3>👤 My Profile</h3>
+                <p>View & Edit Profile</p>
+              </div>
             </Link>
           </div>
         </div>
