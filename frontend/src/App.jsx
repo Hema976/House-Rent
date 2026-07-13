@@ -1,8 +1,9 @@
+import Login from "./pages/Login";
+
 function App() {
   return (
     <div>
-      <h1>House Rent Management System</h1>
-      <p>Frontend setup completed successfully!</p>
+      <Login />
     </div>
   );
 }
