@@ -4,7 +4,9 @@ import "./PropertyList.css";
 
 function PropertyList() {
   const navigate = useNavigate();
+
   const [properties, setProperties] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const defaultProperties = [
@@ -40,12 +42,32 @@ function PropertyList() {
     setProperties([...defaultProperties, ...addedProperties]);
   }, []);
 
+  const filteredProperties = properties.filter((property) =>
+    property.location.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="property-page">
       <h2>Available Properties</h2>
 
+      <input
+        type="text"
+        placeholder="🔍 Search by Location..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{
+          width: "320px",
+          padding: "12px",
+          borderRadius: "8px",
+          border: "none",
+          margin: "20px auto",
+          display: "block",
+          fontSize: "16px",
+        }}
+      />
+
       <div className="property-grid">
-        {properties.map((property) => (
+        {filteredProperties.map((property) => (
           <div className="property-card" key={property._id}>
             <img src={property.image} alt={property.title} />
 
