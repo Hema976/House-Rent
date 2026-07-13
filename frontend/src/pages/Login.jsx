@@ -18,7 +18,6 @@ function Login() {
 
       alert(res.data.message);
 
-      // Login success -> Properties page
       navigate("/properties");
     } catch (err) {
       alert("Login Failed");
