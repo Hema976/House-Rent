@@ -18,12 +18,12 @@ function Home() {
             </Link>
 
             <button
+              className="logout-btn"
               onClick={() => {
                 localStorage.clear();
                 alert("Logged Out Successfully");
                 window.location.href = "/";
               }}
-              className="logout-btn"
             >
               Logout
             </button>
@@ -76,6 +76,13 @@ function Home() {
                 <p>Know more about RentEase</p>
               </div>
             </Link>
+
+            <Link to="/contact" className="card-link">
+              <div className="dashboard-card">
+                <h3>📞 Contact Us</h3>
+                <p>Reach our support team</p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -83,4 +90,4 @@ function Home() {
   );
 }
 
-export default Home;;
+export default Home;
