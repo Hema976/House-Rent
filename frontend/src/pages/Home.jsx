@@ -69,6 +69,13 @@ function Home() {
                 <p>View & Edit Profile</p>
               </div>
             </Link>
+
+            <Link to="/about" className="card-link">
+              <div className="dashboard-card">
+                <h3>ℹ️ About Us</h3>
+                <p>Know more about RentEase</p>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
@@ -76,4 +83,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home;;
