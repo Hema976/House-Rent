@@ -28,45 +28,15 @@ function Home() {
             </button>
           </Link>
 
-          <br />
-          <br />
-
-          <Link to="/owner">
-            <button className="hero-btn">
-              Owner Dashboard
-            </button>
-          </Link>
-
-          <br />
-          <br />
-
-          <Link to="/admin">
-            <button className="hero-btn">
-              Admin Dashboard
-            </button>
-          </Link>
-
-          <br />
-          <br />
-
-          <Link to="/renter">
-            <button className="hero-btn">
-              Renter Dashboard
-            </button>
-          </Link>
-
-          <br />
-          <br />
-
-          <Link to="/profile">
-            <button className="hero-btn">
-              My Profile
-            </button>
-          </Link>
-        </div>
-      </section>
-    </div>
-  );
-}
-
-export default Home;
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "18px",
+              marginTop: "25px",
+            }}
+          >
+            <Link to="/owner">
+              <button className="hero-btn">
+               
