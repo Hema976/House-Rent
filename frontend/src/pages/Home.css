@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  min-height: 100vh;
+  background: #0f172a;
+  color: white;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 70px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 17px;
+}
+
+.register-btn {
+  background: #6d5dfc;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+.hero-content {
+  text-align: center;
+  margin-top: 180px;
+}
+
+.hero-content h1 {
+  font-size: 55px;
+}
+
+.hero-content p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #ddd;
+}
+
+.hero-btn {
+  margin-top: 35px;
+  padding: 15px 40px;
+  background: #6d5dfc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media(max-width:768px){
+
+.navbar{
+padding:20px;
+flex-direction:column;
+gap:15px;
+}
+
+.menu a{
+margin:0 8px;
+font-size:14px;
+}
+
+.hero-content{
+margin-top:120px;
+padding:20px;
+}
+
+.hero-content h1{
+font-size:34px;
+}
+
+.hero-content p{
+font-size:16px;
+}
+
+}
