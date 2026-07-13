@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
+import "./Register.css";
 
 function Register() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,41 +19,45 @@ function Register() {
       });
 
       alert(res.data.message);
+      navigate("/login");
     } catch (err) {
       alert("Registration Failed");
     }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
+    <div className="login-container">
+      <div className="login-box">
+        <h2>Sign Up</h2>
 
-      <input
-        type="text"
-        placeholder="Full Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      /><br /><br />
+        <input
+          type="text"
+          placeholder="Full Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
 
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      /><br /><br />
+        <input
+          type="email"
+          placeholder="Email Address"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      /><br /><br />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <button onClick={handleRegister}>Register</button>
+        <button onClick={handleRegister}>Sign Up</button>
 
-      <p>
-        Already have an account? <Link to="/login">Login</Link>
-      </p>
+        <p>
+          Already have an account?{" "}
+          <Link to="/login">Login</Link>
+        </p>
+      </div>
     </div>
   );
 }
