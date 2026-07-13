@@ -40,6 +40,24 @@ function Home() {
           <br />
           <br />
 
+          <Link to="/admin">
+            <button className="hero-btn">
+              Admin Dashboard
+            </button>
+          </Link>
+
+          <br />
+          <br />
+
+          <Link to="/renter">
+            <button className="hero-btn">
+              Renter Dashboard
+            </button>
+          </Link>
+
+          <br />
+          <br />
+
           <Link to="/profile">
             <button className="hero-btn">
               My Profile
