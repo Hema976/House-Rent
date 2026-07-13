@@ -19,6 +19,8 @@ import AdminHome from "./pages/AdminHome";
 import AdminProperties from "./pages/AdminProperties";
 import AdminBookings from "./pages/AdminBookings";
 
+import RenterHome from "./pages/RenterHome";
+
 function App() {
   return (
     <Routes>
@@ -43,6 +45,9 @@ function App() {
       <Route path="/admin" element={<AdminHome />} />
       <Route path="/admin/properties" element={<AdminProperties />} />
       <Route path="/admin/bookings" element={<AdminBookings />} />
+
+      {/* Renter */}
+      <Route path="/renter" element={<RenterHome />} />
     </Routes>
   );
 }
