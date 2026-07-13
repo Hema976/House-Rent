@@ -11,6 +11,7 @@ import AddProperty from "./pages/AddProperty";
 import Payment from "./pages/Payment";
 import Review from "./pages/Review";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 import OwnerHome from "./pages/OwnerHome";
 import OwnerProperties from "./pages/OwnerProperties";
@@ -25,30 +26,31 @@ import RenterHome from "./pages/RenterHome";
 function App() {
   return (
     <Routes>
-      {/* Main */}
       <Route path="/" element={<Home />} />
+
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+
       <Route path="/properties" element={<PropertyList />} />
       <Route path="/property/:id" element={<PropertyDetails />} />
       <Route path="/booking" element={<Booking />} />
       <Route path="/payment" element={<Payment />} />
       <Route path="/review" element={<Review />} />
+
       <Route path="/profile" element={<Profile />} />
       <Route path="/add-property" element={<AddProperty />} />
-      <Route path="/about" element={<About />} />
 
-      {/* Owner */}
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+
       <Route path="/owner" element={<OwnerHome />} />
       <Route path="/owner/properties" element={<OwnerProperties />} />
       <Route path="/owner/bookings" element={<OwnerBookings />} />
 
-      {/* Admin */}
       <Route path="/admin" element={<AdminHome />} />
       <Route path="/admin/properties" element={<AdminProperties />} />
       <Route path="/admin/bookings" element={<AdminBookings />} />
 
-      {/* Renter */}
       <Route path="/renter" element={<RenterHome />} />
     </Routes>
   );
