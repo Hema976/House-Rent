@@ -1,4 +1,4 @@
-      import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PropertyList.css";
 
@@ -102,7 +102,30 @@ function PropertyList() {
             <img src={property.image} alt={property.title} />
 
             <div className="property-content">
-              <h3>{property.title}</h3>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <h3>{property.title}</h3>
+
+                <button
+                  onClick={() =>
+                    alert("❤️ Added to Wishlist")
+                  }
+                  style={{
+                    background: "none",
+                    border: "none",
+                    fontSize: "22px",
+                    cursor: "pointer",
+                  }}
+                >
+                  ❤️
+                </button>
+              </div>
 
               <p>📍 {property.location}</p>
 
@@ -113,6 +136,7 @@ function PropertyList() {
               >
                 View Details
               </button>
+
             </div>
           </div>
         ))}
