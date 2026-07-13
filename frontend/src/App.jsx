@@ -17,6 +17,7 @@ import OwnerBookings from "./pages/OwnerBookings";
 
 import AdminHome from "./pages/AdminHome";
 import AdminProperties from "./pages/AdminProperties";
+import AdminBookings from "./pages/AdminBookings";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
       {/* Admin */}
       <Route path="/admin" element={<AdminHome />} />
       <Route path="/admin/properties" element={<AdminProperties />} />
+      <Route path="/admin/bookings" element={<AdminBookings />} />
     </Routes>
   );
 }
