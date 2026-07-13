@@ -1,66 +1,100 @@
-import { useState } from "react";
-import API from "../services/api";
-
 function AddProperty() {
-  const [title, setTitle] = useState("");
-  const [address, setAddress] = useState("");
-  const [rent, setRent] = useState("");
-  const [description, setDescription] = useState("");
-
-  const handleSubmit = async () => {
-    try {
-      const res = await API.post("/properties", {
-        title,
-        address,
-        rent,
-        description,
-      });
-
-      alert(res.data.message);
-
-      setTitle("");
-      setAddress("");
-      setRent("");
-      setDescription("");
-    } catch (err) {
-      alert("Error adding property");
-    }
-  };
-
   return (
-    <div>
-      <h2>Add Property</h2>
+    <div
+      style={{
+        background: "#0f172a",
+        minHeight: "100vh",
+        padding: "40px",
+        color: "white",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "850px",
+          margin: "auto",
+          background: "#1e293b",
+          padding: "30px",
+          borderRadius: "12px",
+          boxShadow: "0 0 15px rgba(0,0,0,0.4)",
+        }}
+      >
+        <h2
+          style={{
+            textAlign: "center",
+            color: "#7c5cff",
+            marginBottom: "25px",
+          }}
+        >
+          Add New Property
+        </h2>
 
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      /><br /><br />
+        <input
+          type="text"
+          placeholder="Property Name"
+          style={inputStyle}
+        />
 
-      <input
-        type="text"
-        placeholder="Address"
-        value={address}
-        onChange={(e) => setAddress(e.target.value)}
-      /><br /><br />
+        <input
+          type="text"
+          placeholder="Location"
+          style={inputStyle}
+        />
 
-      <input
-        type="number"
-        placeholder="Rent"
-        value={rent}
-        onChange={(e) => setRent(e.target.value)}
-      /><br /><br />
+        <input
+          type="number"
+          placeholder="Rent Amount"
+          style={inputStyle}
+        />
 
-      <textarea
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-      /><br /><br />
+        <input
+          type="text"
+          placeholder="Owner Contact"
+          style={inputStyle}
+        />
 
-      <button onClick={handleSubmit}>Add Property</button>
+        <input
+          type="text"
+          placeholder="Image URL"
+          style={inputStyle}
+        />
+
+        <textarea
+          placeholder="Property Description"
+          rows="5"
+          style={{
+            ...inputStyle,
+            resize: "none",
+          }}
+        />
+
+        <button
+          style={{
+            width: "100%",
+            padding: "12px",
+            background: "#7c5cff",
+            color: "white",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontSize: "16px",
+            marginTop: "15px",
+          }}
+        >
+          Add Property
+        </button>
+      </div>
     </div>
   );
 }
+
+const inputStyle = {
+  width: "100%",
+  padding: "12px",
+  marginBottom: "15px",
+  borderRadius: "8px",
+  border: "1px solid #444",
+  outline: "none",
+  fontSize: "15px",
+};
 
 export default AddProperty;
