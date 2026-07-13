@@ -13,11 +13,11 @@ import Review from "./pages/Review";
 
 import OwnerHome from "./pages/OwnerHome";
 import OwnerProperties from "./pages/OwnerProperties";
+import OwnerBookings from "./pages/OwnerBookings";
 
 function App() {
   return (
     <Routes>
-      {/* Main Pages */}
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
@@ -29,9 +29,10 @@ function App() {
       <Route path="/payment" element={<Payment />} />
       <Route path="/review" element={<Review />} />
 
-      {/* Owner */}
+      {/* Owner Dashboard */}
       <Route path="/owner" element={<OwnerHome />} />
       <Route path="/owner/properties" element={<OwnerProperties />} />
+      <Route path="/owner/bookings" element={<OwnerBookings />} />
     </Routes>
   );
 }
