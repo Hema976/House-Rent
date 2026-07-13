@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+      import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./PropertyList.css";
 
@@ -7,6 +7,7 @@ function PropertyList() {
 
   const [properties, setProperties] = useState([]);
   const [search, setSearch] = useState("");
+  const [sortOrder, setSortOrder] = useState("");
 
   useEffect(() => {
     const defaultProperties = [
@@ -42,29 +43,58 @@ function PropertyList() {
     setProperties([...defaultProperties, ...addedProperties]);
   }, []);
 
-  const filteredProperties = properties.filter((property) =>
+  let filteredProperties = properties.filter((property) =>
     property.location.toLowerCase().includes(search.toLowerCase())
   );
+
+  if (sortOrder === "low") {
+    filteredProperties.sort((a, b) => a.price - b.price);
+  } else if (sortOrder === "high") {
+    filteredProperties.sort((a, b) => b.price - a.price);
+  }
 
   return (
     <div className="property-page">
       <h2>Available Properties</h2>
 
-      <input
-        type="text"
-        placeholder="🔍 Search by Location..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
+      <div
         style={{
-          width: "320px",
-          padding: "12px",
-          borderRadius: "8px",
-          border: "none",
-          margin: "20px auto",
-          display: "block",
-          fontSize: "16px",
+          display: "flex",
+          justifyContent: "center",
+          gap: "15px",
+          flexWrap: "wrap",
+          margin: "20px 0",
         }}
-      />
+      >
+        <input
+          type="text"
+          placeholder="🔍 Search by Location"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          style={{
+            padding: "12px",
+            width: "250px",
+            borderRadius: "8px",
+            border: "none",
+            fontSize: "15px",
+          }}
+        />
+
+        <select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+          style={{
+            padding: "12px",
+            borderRadius: "8px",
+            border: "none",
+            fontSize: "15px",
+          }}
+        >
+          <option value="">Sort by Price</option>
+          <option value="low">Low → High</option>
+          <option value="high">High → Low</option>
+        </select>
+      </div>
 
       <div className="property-grid">
         {filteredProperties.map((property) => (
@@ -79,9 +109,7 @@ function PropertyList() {
               <p>💰 ₹{property.price}</p>
 
               <button
-                onClick={() =>
-                  navigate(`/property/${property._id}`)
-                }
+                onClick={() => navigate(`/property/${property._id}`)}
               >
                 View Details
               </button>
