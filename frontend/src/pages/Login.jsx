@@ -1,18 +1,18 @@
-import "./Login.css";
+import { Link } from "react-router-dom";
 
 function Login() {
   return (
     <div>
-      <h1>House Rent Management System</h1>
       <h2>Login</h2>
 
-      <input type="email" placeholder="Enter Email" />
-      <br /><br />
-
-      <input type="password" placeholder="Enter Password" />
-      <br /><br />
+      <input type="email" placeholder="Email" /><br /><br />
+      <input type="password" placeholder="Password" /><br /><br />
 
       <button>Login</button>
+
+      <p>
+        Don't have an account? <Link to="/register">Register</Link>
+      </p>
     </div>
   );
 }
