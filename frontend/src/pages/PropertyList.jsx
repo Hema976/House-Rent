@@ -4,11 +4,10 @@ import "./PropertyList.css";
 
 function PropertyList() {
   const navigate = useNavigate();
-
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    setProperties([
+    const defaultProperties = [
       {
         _id: 1,
         title: "2BHK House",
@@ -33,7 +32,12 @@ function PropertyList() {
         image:
           "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800",
       },
-    ]);
+    ];
+
+    const addedProperties =
+      JSON.parse(localStorage.getItem("properties")) || [];
+
+    setProperties([...defaultProperties, ...addedProperties]);
   }, []);
 
   return (
@@ -53,7 +57,9 @@ function PropertyList() {
               <p>💰 ₹{property.price}</p>
 
               <button
-                onClick={() => navigate(`/property/${property._id}`)}
+                onClick={() =>
+                  navigate(`/property/${property._id}`)
+                }
               >
                 View Details
               </button>
