@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import AddProperty from "./pages/AddProperty";
 import Payment from "./pages/Payment";
 import Review from "./pages/Review";
+import About from "./pages/About";
 
 import OwnerHome from "./pages/OwnerHome";
 import OwnerProperties from "./pages/OwnerProperties";
@@ -31,10 +32,11 @@ function App() {
       <Route path="/properties" element={<PropertyList />} />
       <Route path="/property/:id" element={<PropertyDetails />} />
       <Route path="/booking" element={<Booking />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/add-property" element={<AddProperty />} />
       <Route path="/payment" element={<Payment />} />
       <Route path="/review" element={<Review />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/add-property" element={<AddProperty />} />
+      <Route path="/about" element={<About />} />
 
       {/* Owner */}
       <Route path="/owner" element={<OwnerHome />} />
