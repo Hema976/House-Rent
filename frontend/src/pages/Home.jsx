@@ -10,10 +10,23 @@ function Home() {
 
           <div className="menu">
             <Link to="/">Home</Link>
+
             <Link to="/login">Login</Link>
+
             <Link to="/register" className="register-btn">
               Register
             </Link>
+
+            <button
+              onClick={() => {
+                localStorage.clear();
+                alert("Logged Out Successfully");
+                window.location.href = "/";
+              }}
+              className="logout-btn"
+            >
+              Logout
+            </button>
           </div>
         </nav>
 
