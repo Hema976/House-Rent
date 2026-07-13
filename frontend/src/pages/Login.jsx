@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
-import "./Login.css";
+import "../App.css";
 
 function Login() {
   const navigate = useNavigate();
@@ -17,7 +17,6 @@ function Login() {
       });
 
       alert(res.data.message);
-
       navigate("/properties");
     } catch (err) {
       alert("Login Failed");
@@ -25,8 +24,8 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
+    <div className="container">
+      <div className="card">
         <h2>Sign In</h2>
 
         <input
