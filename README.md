@@ -1,6 +1,6 @@
 # 🏠 House Rent Management System
 
-A full-stack MERN application developed to simplify the process of renting houses online. The platform connects property owners and tenants, allowing users to search, list, book, review, and manage rental properties through a secure web application.
+A full-stack MERN (MongoDB, Express.js, React.js, Node.js) application developed for online house rental management. The platform allows property owners to list rental properties and enables tenants to search, book, review, and manage rental houses securely.
 
 ---
 
@@ -24,9 +24,7 @@ A complete demonstration of the House Rent Management System is available below.
 
 (Add your Google Drive Demo Link Here)
 
----
-
-# The demo includes
+The demo includes:
 
 - User Registration
 - User Login
@@ -34,11 +32,13 @@ A complete demonstration of the House Rent Management System is available below.
 - Property Search
 - Property Details
 - Property Booking
-- Payment
+- Payment System
 - Review System
 - Owner Dashboard
 - Tenant Dashboard
 - Admin Dashboard
+- Backend API
+- MongoDB Connection
 
 ---
 
@@ -50,8 +50,9 @@ A complete demonstration of the House Rent Management System is available below.
 - Vite
 - React Router
 - Axios
+- HTML5
+- CSS3
 - Bootstrap
-- CSS
 
 ## Backend
 
@@ -61,41 +62,43 @@ A complete demonstration of the House Rent Management System is available below.
 - Mongoose
 - JWT Authentication
 - bcryptjs
-- CORS
 - dotenv
+- CORS
 
 ---
 
 # 👥 User Roles
 
-The application supports three different user roles.
+The application supports three user roles.
 
-### Tenant
+## Tenant
 
 - Register
 - Login
-- Search Houses
-- Book Property
+- Search Properties
+- View Property Details
+- Book House
 - Make Payment
-- Add Reviews
+- Submit Reviews
 - View Booking History
+- Manage Profile
 
-### Property Owner
+## Property Owner
 
 - Login
 - Add Property
 - Edit Property
 - Delete Property
-- Manage Bookings
-- View Reviews
+- Manage Property Listings
+- View Booking Requests
 
-### Administrator
+## Administrator
 
 - Manage Users
 - Manage Properties
 - Manage Bookings
+- Manage Reviews
 - Monitor Payments
-- View Reports
 
 ---
 
@@ -106,25 +109,36 @@ The application supports three different user roles.
 - Secure Registration
 - JWT Authentication
 - Search Rental Houses
-- Filter Properties
+- Property Filtering
 - View Property Details
-- Book House
+- Book Rental House
 - Online Payment
-- Review Property
+- Review Properties
 - Booking History
+- Profile Management
 
 ## Owner Features
 
 - Add New Property
-- Update Property
+- Edit Property
 - Delete Property
+- View Bookings
 - Manage Listings
-- View Customer Bookings
 
-## Admin Features
+## Administrator Features
 
 - User Management
 - Property Management
 - Booking Management
-- Review Monitoring
 - Payment Monitoring
+- Review Monitoring
+
+---
+
+# 🔒 Security Features
+
+- JWT Authentication
+- Password Hashing using bcrypt
+- Protected Routes
+- Role-Based Authorization
+- MongoDB Data Security
