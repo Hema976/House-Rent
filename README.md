@@ -5,7 +5,6 @@ A full-stack MERN (MongoDB, Express.js, React.js, Node.js) application developed
 ---
 
 # 🌐 Live Demo
-https://drive.google.com/file/d/1_ytXJxaj7mZWTW5uaxOJEPBf4AmnwxYT/view?usp=drivesdk
 
 ### Frontend (Vercel)
 
@@ -21,9 +20,12 @@ https://house-rent-lt8a.onrender.com/
 
 A complete demonstration of the House Rent Management System is available below.
 
+#Project template:
+https://drive.google.com/drive/folders/1s-5BdRnSKnEHbLQ_FKEQ4tVX9_0miypy
+
 ### Google Drive Demo
 
-(Add your Google Drive Demo Link Here)
+https://drive.google.com/file/d/1_ytXJxaj7mZWTW5uaxOJEPBf4AmnwxYT/view?usp=drivesdk
 
 The demo includes:
 
