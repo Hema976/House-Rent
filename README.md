@@ -2,6 +2,48 @@
 
 A full-stack MERN (MongoDB, Express.js, React.js, Node.js) application developed for online house rental management. The platform allows property owners to list rental properties and enables tenants to search, book, review, and manage rental houses securely.
 
+# MERN Development Phases
+
+## Phase 1: Planning
+- Problem Statement
+- Requirements Analysis
+- Technology Selection
+
+## Phase 2: Frontend Development (React)
+- Home Page
+- Login & Registration
+- Property Listing
+- Property Details
+- Dashboard
+- Responsive UI
+
+## Phase 3: Backend Development (Node.js + Express)
+- REST APIs
+- Authentication
+- Property Management APIs
+- Booking APIs
+
+## Phase 4: Database Development (MongoDB)
+- User Collection
+- Property Collection
+- Booking Collection
+- Review Collection
+
+## Phase 5: Integration
+- Connected React with Express APIs
+- MongoDB Integration
+- Error Handling
+
+## Phase 6: Testing
+- Functional Testing
+- API Testing using Postman
+- UI Testing
+
+## Phase 7: Deployment
+- Frontend: Vercel
+- Backend: Render
+- GitHub Repository
+- Demo Video
 ---
 
 # 🌐 Live Demo
